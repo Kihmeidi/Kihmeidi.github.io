@@ -366,6 +366,61 @@ a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .repo-list a { font-size: .88rem; text-decoration: none; }
 .repo-list a:hover { text-decoration: underline; }
 
+/* ---------- Experience timeline ---------- */
+.exp-list { counter-reset: exp; }
+
+.exp-item {
+  position: relative;
+  padding: 0 0 2rem 2rem;
+  border-left: 2px solid var(--am-border);
+}
+.exp-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+
+.exp-item::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: .35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--am-accent);
+  box-shadow: 0 0 0 4px var(--bs-body-bg);
+}
+
+.exp-head { padding-right: 9rem; }
+.exp-sub { font-weight: 400; color: var(--bs-secondary-color); font-size: .9em; }
+.exp-meta { color: var(--bs-secondary-color); font-size: .93rem; }
+.exp-org { font-weight: 600; color: var(--bs-body-color); }
+
+.exp-date {
+  position: absolute;
+  right: 0;
+  top: .15rem;
+  font-size: .8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: .3rem .7rem;
+  border-radius: 999px;
+  background: var(--am-accent-soft);
+  color: var(--am-accent);
+}
+
+.exp-points {
+  margin: .9rem 0 0;
+  padding-left: 1.1rem;
+}
+.exp-points li {
+  margin-bottom: .4rem;
+  color: var(--bs-secondary-color);
+}
+.exp-points li::marker { color: var(--am-accent); }
+
+@media (max-width: 575.98px) {
+  .exp-head { padding-right: 0; }
+  .exp-date { position: static; display: inline-block; margin-top: .5rem; }
+}
+
 /* ---------- Certifications ---------- */
 .cert-list li {
   display: flex;
